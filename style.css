@@ -1,0 +1,52 @@
+:root{
+--bg1: #0f1724; /* dark navy */
+--bg2: #071025; /* deeper */
+--accent: #7ee7f7; /* cyan */
+--accent-2: #9b7cff; /* purple */
+--muted: #9aa6b2;
+--glass: rgba(255,255,255,0.04);
+}
+
+
+*{box-sizing:border-box}
+html,body,#app{height:100%;}
+body{
+margin:0; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+background: radial-gradient(1200px 600px at 10% 10%, rgba(158,122,255,0.08), transparent),
+linear-gradient(180deg,var(--bg1),var(--bg2));
+color: #e6eef6; -webkit-font-smoothing:antialiased;
+display:flex; align-items:center; justify-content:center; padding:20px;
+}
+
+
+main#app{width:100%; max-width:1100px;}
+.hud{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px}
+.hud .title{font-weight:800; letter-spacing:1px; font-size:1.3rem}
+.hud .meta{color:var(--muted); font-size:0.95rem}
+
+
+.game-wrap{position:relative; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-radius:14px; padding:12px; box-shadow:0 10px 30px rgba(2,6,23,0.6);}
+
+
+#gameCanvas{display:block; width:100%; height:calc(100vw * 0.55); max-height:720px; border-radius:8px; background: linear-gradient(180deg,#021028 0%, #00121a 100%);}
+
+
+/* Footer */
+.footer{display:flex; justify-content:space-between; align-items:center; margin-top:10px}
+.btn{background:linear-gradient(90deg,var(--accent),var(--accent-2)); border:none; color:#021026; font-weight:700; padding:10px 16px; border-radius:12px; cursor:pointer}
+.hint{color:var(--muted); font-size:0.9rem}
+
+
+/* Mobile controls */
+.mobile-controls{position:absolute; left:50%; transform:translateX(-50%); bottom:18px; display:flex; gap:12px;}
+.ctl{width:56px; height:56px; border-radius:12px; border:none; background:var(--glass); color:var(--accent); font-size:1.2rem; backdrop-filter: blur(6px); box-shadow:0 6px 18px rgba(9,12,20,0.6);}
+.ctl.fire{width:64px; height:64px; background:linear-gradient(180deg,var(--accent),var(--accent-2)); color:#021026; font-weight:800}
+
+
+/* Responsive tweaks */
+@media (max-width:600px){
+#gameCanvas{height:calc(100vw * 0.85)}
+.hud .title{font-size:1.1rem}
+.ctl{width:48px;height:48px}
+.ctl.fire{width:56px;height:56px}
+}
