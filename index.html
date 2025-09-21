@@ -1,45 +1,39 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Space Blasters</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>River Run — Modern River Raid</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<main id="app">
-<header class="hud">
-<div class="title">Space Blasters</div>
-<div class="meta">
-<span id="score">Score: 0</span>
-<span id="lives">Lives: 3</span>
-</div>
-</header>
+  <div class="wrap">
+    <header class="hud">
+      <div class="brand">River Run</div>
+      <div class="stats">
+        <span id="score">Score: 0</span>
+        <span id="fuel">Fuel: 100%</span>
+        <span id="lives">Lives: 3</span>
+      </div>
+    </header>
 
+    <div class="game-area">
+      <canvas id="game"></canvas>
+      <div class="controls" id="controls">
+        <button id="left">◀</button>
+        <button id="up">▲</button>
+        <button id="fire">●</button>
+        <button id="down">▼</button>
+        <button id="right">▶</button>
+      </div>
+    </div>
 
-<div class="game-wrap">
-<canvas id="gameCanvas"></canvas>
+    <footer class="foot">
+      <button id="start">Start / Restart</button>
+      <div class="hint">Keyboard: ← → ↑ ↓ to move, Space to fire</div>
+    </footer>
+  </div>
 
-
-<!-- Mobile controls -->
-<div id="mobileControls" class="mobile-controls">
-<button id="leftBtn" class="ctl">◀</button>
-<button id="fireBtn" class="ctl fire">●</button>
-<button id="rightBtn" class="ctl">▶</button>
-</div>
-</div>
-
-
-<footer class="footer">
-<button id="startBtn" class="btn">Start / Restart</button>
-<div class="hint">Use ← → and Space (desktop) or controls below (mobile)</div>
-</footer>
-</main>
-
-
-<script src="game.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>
